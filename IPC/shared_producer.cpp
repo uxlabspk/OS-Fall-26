@@ -1,7 +1,3 @@
-//
-// Created by muhammad on 28/09/2026.
-//
-
 #include <iostream>
 #include <cstring>
 #include <fcntl.h>      // O_CREAT, O_RDWR

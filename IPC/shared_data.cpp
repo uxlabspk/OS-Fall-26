@@ -4,12 +4,13 @@
 #include <cstring>
 #include <sys/wait.h>
 
-#define SHM_SIZE 1024
+#define SHM_SIZE 1024  // Bytes
 
 // Bounded-buffer producer/consumer
 int main() {
     // Create shared memory segment
     int shmid = shmget(IPC_PRIVATE, SHM_SIZE, IPC_CREAT | 0666);
+
     if (shmid == -1) {
         std::cerr << "shmget failed!" << std::endl;
         return 1;

@@ -1,11 +1,8 @@
-//
-// Created by muhammad on 28/09/2026.
-//
 #include <iostream>
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
-#include <unistd.h>
+
 using namespace std;
 
 int main() {

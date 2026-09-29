@@ -14,6 +14,8 @@ struct Message {
 int main() {
     // Create message queue
     int msgid = msgget(MSGQ_KEY, IPC_CREAT | 0666);
+
+    // check for message queue.
     if (msgid == -1) {
         std::cerr << "msgget failed!" << std::endl;
         return 1;

@@ -7,19 +7,26 @@ int main() {
 
     if (pid < 0) {
         std::cerr << "Fork Failed" << std::endl;
-        return 1;
+        return -1;
     }
 
     if (pid == 0) {
         // execl("/bin/ls", "ls", "-l", NULL);
-
         // execlp("ls", "ls", "-l", NULL);
+
+
+        char* argv[] = {"ls", "-l", nullptr};
+        execv("/bin/ls", argv);
+        execvp("ls", argv);
+
+        // char* argv[] = {"ls", "-l", nullptr};
+        // execv("/bin/ls", argv);
+
+        // char* argv[] = {"ls", "-l", nullptr};
+        // execvp("ls", argv);
 
         // char* envp[] = {"PATH=/bin", "USER=muhammad", NULL};
         // execle("/bin/ls", "ls", "-l", NULL, envp);
-
-        // char* argv[] = {"ls", "-l", NULL};
-        // execv("/bin/ls", argv);
 
         return 0;
     }

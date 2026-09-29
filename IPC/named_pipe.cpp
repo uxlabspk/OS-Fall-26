@@ -5,14 +5,14 @@
 
 int main() {
     // Create FIFO (named pipe)
-    mkfifo("/tmp/myfifo", 0666); // Permissions: rw-rw-rw-
+    mkfifo("/tmp/FIFO", 0666); // Permissions: rw-rw-rw-
 
-    int fd = open("/tmp/myfifo", O_WRONLY);
-    const char* msg = "Hello via FIFO!";
-    write(fd, msg, 15);
+    const int fd = open("/tmp/FIFO", O_WRONLY);
+    const char* msg = "Sending Message...";
+    write(fd, msg, 18);
     close(fd);
 
     // Clean up (optional)
-    unlink("/tmp/myfifo");
+    unlink("/tmp/FIFO");
     return 0;
 }

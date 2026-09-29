@@ -4,14 +4,15 @@
 using namespace std;
 
 int main() {
-    pid_t pid = fork();
+    const pid_t pid = fork();
 
     if (pid < 0) {
-        perror("fork error");
-        return 1;
-    } else if (pid == 0) {
-        cout << "exiting the child process" << endl;
-        cout << getpid() << endl;
+        cerr << "Fork Failed" << endl;
+        return -1;
+    }
+
+    if (pid == 0) {
+        cout << "This is child process with PID : " << getpid() << endl;
         exit(0);
     } else {
         sleep(3);

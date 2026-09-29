@@ -16,7 +16,7 @@ int main() {
 
     if (pid < 0) {
         std::cerr << "fork() failed" << std::endl;
-        return 1;
+        return -1;
     }
 
     if (pid == 0) {
@@ -25,7 +25,7 @@ int main() {
         std::cout << "Parent Process Id (PPID) : " << getppid() << std::endl;
     } else {
         wait(nullptr);
-        std::cout << "This is the parent proces" << std::endl;
+        std::cout << "This is the parent process" << std::endl;
         std::cout << "Process Id (PID) : " << getpid() << std::endl;
         std::cout << "Parent Process Id (PID) : " << getppid() << std::endl;
     }
