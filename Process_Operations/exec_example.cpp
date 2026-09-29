@@ -11,13 +11,15 @@ int main() {
     }
 
     if (pid == 0) {
-        // execl("/bin/ls", "ls", "-l", NULL);
-        // execlp("ls", "ls", "-l", NULL);
+        //execl("/bin/ls", "ls", "-l", NULL);
+        //execlp("ls", "ls", "-l", NULL);
 
-
-        char* argv[] = {"ls", "-l", nullptr};
+        char* argv[] = {"ls", "-l", NULL};
         execv("/bin/ls", argv);
-        execvp("ls", argv);
+
+        // char* argv[] = {"ls", "-l", nullptr};
+        // execv("/bin/ls", argv);
+        // execvp("ls", argv);
 
         // char* argv[] = {"ls", "-l", nullptr};
         // execv("/bin/ls", argv);
