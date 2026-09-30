@@ -1,10 +1,16 @@
+<div align="center">
+
 # OS-Fall-26
+
+---
 
 ### Operating Systems concepts, in runnable C++.
 
 A collection of **small, self-contained Linux programs** written while working through an Operating Systems course — processes, threads, and IPC. Every file does one thing, prints what happened, and can be compiled and run on its own.
 
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?style=flat-square&logo=cplusplus&logoColor=white)](https://isocpp.org/)[![Linux](https://img.shields.io/badge/Linux-POSIX-FCC624?style=flat-square&logo=linux&logoColor=black)](https://www.gnu.org/software/libc/)[![CMake](https://img.shields.io/badge/CMake-4.x-064F8C?style=flat-square&logo=cmake&logoColor=white)](https://cmake.org/)
+
+</div>
 
 ---
 
