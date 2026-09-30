@@ -146,11 +146,3 @@ Course notes grow over the semester. Contributions welcome.
 3. Commit (`git commit -m 'Add semaphore example'`)
 4. Push (`git push origin feat/my-example`)
 5. Open a PR
-
----
-
-**If an example here finally made zombies click for you, give it a star.**
-
-It helps other students find it, and tells me this is worth continuing.
-
-[⭐ Star this repo](https://github.com/uxlabspk/OS-Fall-26/stargazers)
