@@ -6,7 +6,7 @@
 
 ### Operating Systems concepts, in runnable C++.
 
-A collection of **small, self-contained Linux programs** written while working through an Operating Systems course — processes, threads, and IPC. Every file does one thing, prints what happened, and can be compiled and run on its own.
+A collection of **small, self-contained Linux programs** written while working through an Operating Systems course — processes, threads, IPC, and CPU scheduling. Every file does one thing, prints what happened, and can be compiled and run on its own.
 
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?style=flat-square&logo=cplusplus&logoColor=white)](https://isocpp.org/)[![Linux](https://img.shields.io/badge/Linux-POSIX-FCC624?style=flat-square&logo=linux&logoColor=black)](https://www.gnu.org/software/libc/)[![CMake](https://img.shields.io/badge/CMake-4.x-064F8C?style=flat-square&logo=cmake&logoColor=white)](https://cmake.org/)
 
@@ -33,6 +33,10 @@ From raw `pthreads` up to `std::thread`, then synchronization: a race condition 
 ### Thread Pool
 
 A compact `ThreadPool` with a shared task queue, worker threads, and graceful shutdown — the classic pattern, in ~60 lines.
+
+### CPU Scheduling
+
+Nine discrete-event simulators over hard-coded process sets, each printing its own schedule — **FCFS**, **Non-preemptive SJF**, **Preemptive SJF (SRTF)**, **Round Robin** (quantum 3), **Priority**, **Multilevel Queue** (system / interactive / batch), **Multilevel Feedback Queue** (demote on timeout), **Scheduling Metrics** (waiting, turnaround, CPU utilization), and a **thread-based Round Robin scheduler** driven by a real `mutex` + `condition_variable` ready queue.
 
 ### IPC
 
@@ -66,6 +70,13 @@ Compile any single example:
 ```bash
 g++ -std=c++17 Threads/race_condition.cpp -o race_condition -pthread
 ./race_condition
+```
+
+Scheduling examples are single files too — quote the name, it has spaces:
+
+```bash
+g++ -std=c++17 "Scheduling/Round Robin .cpp" -o round_robin
+./round_robin
 ```
 
 The IPC examples that come in pairs must be started in order:
@@ -137,6 +148,16 @@ OS-Fall-26/
 │   ├── shared_data.cpp      shmget/shmat producer-consumer
 │   ├── shared_producer.cpp  POSIX shm_open/mmap writer
 │   └── shared_consumer.cpp  POSIX shm_open/mmap reader
+├── Scheduling/
+│   ├── FCFS Scheduling.cpp                 First-come, first-served
+│   ├── Non-Preemptive SJF.cpp              Shortest job first, runs to completion
+│   ├── Preemptive SJF_SRTF.cpp             Shortest remaining time first
+│   ├── Round Robin .cpp                    Fixed quantum (3), FIFO ready queue
+│   ├── Priority Scheduling.cpp             Lowest priority number wins
+│   ├── Multilevel Queue Scheduling.cpp     Fixed queues: system / interactive / batch
+│   ├── Multilevel Feedback Queue.cpp       Queues that demote on each timeout
+│   ├── Scheduling Metrics.cpp              Waiting / turnaround / averages from finish times
+│   └── Simple Thread Scheduling Simulation.cpp  Real threads + CV-driven ready queue
 └── Compiler_Working/
     └── hello.cpp            Sanity-check build
 ```

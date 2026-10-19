@@ -34,7 +34,6 @@ int main() {
             continue;
         }
 
-        ++p[idx].remaining;
         --p[idx].remaining; // runs for 1 time unit
         ++currentTime;
 
