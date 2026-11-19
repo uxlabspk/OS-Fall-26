@@ -1,6 +1,3 @@
-//
-// Created by muhammad on 19/10/2026.
-//
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -11,7 +8,9 @@ struct Process {
 
 int main() {
     std::vector<Process> p = {
-        {1, 0, 10}, {2, 1, 5}, {3, 2, 8}
+        {1, 0, 10},
+        {2, 1, 5},
+        {3, 2, 8}
     };
 
     std::sort(p.begin(), p.end(),
